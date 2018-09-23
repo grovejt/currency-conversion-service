@@ -35,9 +35,16 @@ dependencies {
 	compile('org.springframework.cloud:spring-cloud-starter-config')
 	compile('org.springframework.cloud:spring-cloud-starter-openfeign')
 	compile('org.springframework.cloud:spring-cloud-starter-netflix-ribbon')
+	
+	// make this app register itself with the eureka naming server:
 	compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
 	
-	compile('org.springframework.cloud:spring-cloud-starter-sleuth')
+
+	// enable distributed tracing:
+	//compile('org.springframework.cloud:spring-cloud-starter-sleuth')
+	//compile ('org.springframework.cloud:spring-cloud-starter-zipkin')
+	// this adds both sleuth and zipkin:
+	compile ('org.springframework.cloud:spring-cloud-sleuth-zipkin')
 	
 	runtime('org.springframework.boot:spring-boot-devtools')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
